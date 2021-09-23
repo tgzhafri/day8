@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Javascript</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="container">
+        <video id="vid" src="mov_bbb.mp4" width="600px" controls loop></video>
+        <br>
+        <div class="vid-btn" onclick="playVid()">Play</div>
+        <div class="vid-btn" onclick="pauseVid()">Pause</div>
+        <div class="vid-btn" onclick="updateVol(-0.1)">Vol---</div>
+        <div class="vid-btn" onclick="updateVol(0.1)">Vol+++</div>
+        <br>
+        <div id="switch-btn" class="vid-btn" onclick="switchClick()">
+            <i class="fa fa-play"></i>
+        </div>
+
+        <p onclick="switchVid('mov_bbb.mp4')">Play BBB</p>
+        <p onclick="switchVid('Movie1.mp4')">Play Bear</p>
+
+    </div>
+
+    <script src="scriptvid.js"></script>
+
+</body>
+
+</html>
