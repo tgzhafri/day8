@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SET Day 8 - If else</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-
+    <title>Video Media Player</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
@@ -19,22 +14,60 @@
 
 <body>
     <div id="container">
-        <h1>0</h1>
-        <div id="button">
-            <div class="btn" onclick="count(-1)">-</div>
-            <div class="btn" onclick="count(+2)">+</div>
+        <div id="main-vid">
+            <h1>Video Media Player</h1>
+            <video id="vid" src="mov_bbb.mp4" width="100%" loop></video>
+            <div id="controls">
+                <div id="vol-btn" class="vid-btn" >
+                    <a href="#side-vid-holder"><i class="fas fa-list"></i></a>
+                </div>
+                <div id="vol-btn" class="vid-btn" >
+                    <i class="fas fa-backward"></i>
+                </div>
+                <div id="vol-btn" class="vid-btn" onclick="updateVol(-0.1)">
+                    <i class="fas fa-volume-down"></i>
+                </div>
+                <div id="switch-btn" class="vid-btn" onclick="switchClick()">
+                    <i class="fa fa-play"></i>
+                </div>
+                <div id="vol-btn" class="vid-btn" onclick="updateVol(0.1)">
+                    <i class="fas fa-volume-up"></i>
+                </div>
+                <div id="vol-btn" class="vid-btn" >
+                    <i class="fas fa-forward"></i>
+                </div>
+            </div>
+
+
         </div>
 
-        <div id="button">
-            <div class="color-btn" onclick="changeBg('blue')" id="blue-btn">Blue</div>
-            <div class="color-btn" onclick="changeBg('green')" id="green-btn">Green</div>
-            <div class="color-btn" onclick="changeBg('red')" id="red-btn">Red</div>
+        <div id="side-vid-holder">
+            <h3>What to play next</h3>
+            <div class="side-list" onclick="switchVid('mov_bbb.mp4')">
+                <video src="mov_bbb.mp4" ></video>
+                <p>Play short video rabbit.</p>
+            </div>
+            <div class="side-list" onclick="switchVid('movie2.mp4')">
+                <video src="movie2.mp4"></video>
+                <p>Play short video Gojo Satoru.</p>
+            </div>
+            <div class="side-list" onclick="switchVid('movie3.mp4')">
+                <video src="movie3.mp4"></video>
+                <p>Play short video One Punch Man.</p>
+            </div>
+            <div class="side-list" onclick="switchVid('movie4.mp4')">
+                <video src="movie4.mp4"></video>
+                <p>Play short video Yuuji Itadori.</p>
+            </div>
+
+
         </div>
 
 
     </div>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>

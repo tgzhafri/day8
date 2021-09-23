@@ -1,66 +1,47 @@
-var score = 0;
+var vid = document.getElementById("vid");
+var vol = 1;
+var isPlaying = false;
 
-function count(num) {
-  score += num;
+function playVid() {
+  vid.play();
+}
+function pauseVid() {
+  vid.pause();
+}
 
-  if (score < 0) {
-    score = 0;
+function updateVol(volNum) {
+  vol += volNum;
+
+  if (vol >= 1) {
+    vol = 1;
+  } else if (vol <= 0) {
+    vol = 0;
+  }
+  console.log(vol);
+  vid.volume = vol;
+}
+function switchClick() {
+  if (isPlaying == false) {
+    vid.play();
+    isPlaying = true;
+    document.getElementById("switch-btn").innerHTML =
+      "<i class='fa fa-pause fadeAnimate'></i>";
+    return;
   }
 
-  document.querySelector("h1").innerHTML = score;
-
-  if (score > 10 && score < 20) {
-    document.querySelector("#container").style.backgroundColor = "silver";
-  } else if (score > 20 && score < 30) {
-    document.querySelector("#container").style.backgroundColor = "yellow";
-  } else {
-    document.querySelector("#container").style.backgroundColor = "white";
+  if (isPlaying == true) {
+    vid.pause();
+    isPlaying = false;
+    document.getElementById("switch-btn").innerHTML =
+      "<i class='fa fa-play fadeAnimate'></i>";
+    return;
   }
-} //count function scope
-
-function changeBg(color) {
-  document.querySelector("#container").style.backgroundColor = color;
 }
 
-// function overBtn() {
-//   document.querySelector(".color-btn").style.backgroundColor = "gray";
-// }
-// function outBtn() {
-//   document.querySelector(".color-btn").style.backgroundColor = "skyblue";
-// }
-// function downBtn() {
-//   document.querySelector(".color-btn").style.backgroundColor = "pink";
-// }
-// function upBtn() {
-//   document.querySelector(".color-btn").style.backgroundColor = "yellow";
-// }
-
-function overBtn(evt) {
-  this.style.backgroundColor = "gray";
+function switchVid(fileName) {
+  vid.src = fileName;
+  isPlaying = false;
+  document.getElementById("switch-btn").innerHTML =
+  "<i class='fa fa-play fadeAnimate'></i>";
 }
-document.getElementById("blue-btn").addEventListener("mouseover", overBtn);
-document.getElementById("green-btn").addEventListener("mouseover", overBtn);
-document.getElementById("red-btn").addEventListener("mouseover", overBtn);
-
-function outBtn(evt) {
-  this.style.backgroundColor = "skyblue";
-}
-document.getElementById("blue-btn").addEventListener("mouseout", outBtn);
-document.getElementById("green-btn").addEventListener("mouseout", outBtn);
-document.getElementById("red-btn").addEventListener("mouseout", outBtn);
-
-function downBtn(evt) {
-  this.style.backgroundColor = "pink";
-}
-document.getElementById("blue-btn").addEventListener("mousedown", downBtn);
-document.getElementById("green-btn").addEventListener("mousedown", downBtn);
-document.getElementById("red-btn").addEventListener("mousedown", downBtn);
-
-function upBtn(evt) {
-  this.style.backgroundColor = "yellow";
-}
-document.getElementById("blue-btn").addEventListener("mouseup", upBtn);
-document.getElementById("green-btn").addEventListener("mouseup", upBtn);
-document.getElementById("red-btn").addEventListener("mouseup", upBtn);
-
 
