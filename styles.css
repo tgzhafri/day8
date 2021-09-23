@@ -96,6 +96,11 @@ body {
   align-items: flex-start;
   gap: 1rem;
 }
+#side-vid-holder a {
+  width: 100%;
+  text-decoration: none;
+  color:black;
+}
 .side-list {
   width: 100%;
   height: 150px;
