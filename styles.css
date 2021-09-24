@@ -89,23 +89,60 @@ body {
   }
 }
 #side-vid-holder {
-  /* width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1rem; */
   width: 100%;
   max-width: 1000px;
   position: absolute;
   top: 70px;
   padding: 0 1.25rem;
   display: none;
+
+  animation-name: displaySide;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+@keyframes displaySide {
+  0% {
+    opacity: 0;
+    transform: translateX(-550px);
+  }
+  100% {
+    opacity: 1;
+    /* transform: translateX(0); */
+  }
 }
 #side-vid-holder a {
   width: 100%;
   text-decoration: none;
-  color:black;
+  color: black;
+}
+#bottom-vid-holder {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+  display: block;
+
+  animation-name: displayDown;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+@keyframes displayDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    /* transform: translateX(0); */
+  }
+}
+#bottom-vid-holder a {
+  width: 100%;
+  text-decoration: none;
+  color: black;
 }
 .side-list {
   width: 100%;

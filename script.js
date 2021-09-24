@@ -3,13 +3,6 @@ var vol = 1;
 var isPlaying = false;
 var isDisplay = false;
 
-function playVid() {
-  vid.play();
-}
-function pauseVid() {
-  vid.pause();
-}
-
 function updateVol(volNum) {
   vol += volNum;
 
@@ -51,15 +44,18 @@ function switchVid(fileName) {
 function openDisplay () {
   if (isDisplay == false) {
     document.querySelector('#side-vid-holder').style.display = "block";
+    document.querySelector('#bottom-vid-holder').style.display = "none";
     isDisplay= true;
     return
   }
   if (isDisplay == true) {
     document.querySelector('#side-vid-holder').style.display = "none";
+    document.querySelector('#bottom-vid-holder').style.display = "block";
     isDisplay = false;
     return
   }
 }
+
 
 // function outBox (evt) {
 //   this.style.display = "none";
